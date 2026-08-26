@@ -106,8 +106,9 @@ function showPage(masterBytes, login) {
     let html = new TextDecoder().decode(pt);
     const logout = '<a href="#" onclick="sessionStorage.removeItem(\'mk\');sessionStorage.removeItem(\'mklogin\');location.reload();return false">Выйти (' + login + ')</a></nav>';
     html = html.replace("</nav>", logout);
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    document.replaceChild(document.adoptNode(doc.documentElement), document.documentElement);
+    document.open();
+    document.write(html);
+    document.close();
   });
 }
 
