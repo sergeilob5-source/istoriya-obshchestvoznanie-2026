@@ -181,6 +181,28 @@ details.grade .badge {
 .exam-card a { color: var(--soc); }
 .exam-card .meta { font-size: .88rem; color: var(--muted); }
 
+/* Страницы конспектов */
+.material { padding-bottom: 40px; }
+.material h2 { font-size: 1.35rem; margin: 34px 0 10px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--gold); }
+.material h3 { font-size: 1.08rem; margin: 22px 0 8px; }
+.material p { max-width: 780px; }
+.material .term { background: var(--soc-soft); border-radius: 6px; padding: 1px 6px; }
+.hist-theme.material .term { background: var(--hist-soft); }
+.material table.dates { width: 100%; border-collapse: collapse; background: var(--card);
+  border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin: 14px 0 20px;
+  font-size: .95rem; }
+.material table.dates th, .material table.dates td { text-align: left;
+  padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.material table.dates th { background: var(--hist-soft); }
+.soc-theme.material table.dates th { background: var(--soc-soft); }
+.material table.dates td:first-child { white-space: nowrap; font-weight: bold; width: 130px; }
+.material .backlink { display: inline-block; margin: 18px 0 0; }
+.material .box { background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--gold); border-radius: 10px; padding: 12px 18px;
+  margin: 14px 0; font-size: .95rem; }
+.read-link { display: inline-block; margin: 4px 0 10px; font-weight: bold; }
+
 /* Подвал */
 footer.site {
   background: #2b2823;

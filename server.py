@@ -39,7 +39,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PAGES_DIR = os.path.join(BASE_DIR, "pages")
 USERS_FILE = os.path.join(BASE_DIR, "users.json")
 TEMPLATE_FILE = os.path.join(BASE_DIR, "protected_template.html")
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8741
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 8741
 
 ITERATIONS = 200_000
 
