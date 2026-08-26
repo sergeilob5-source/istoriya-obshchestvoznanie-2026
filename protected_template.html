@@ -106,14 +106,20 @@ function showPage(masterBytes, login) {
     let html = new TextDecoder().decode(pt);
     const logout = '<a href="#" onclick="sessionStorage.removeItem(\'mk\');sessionStorage.removeItem(\'mklogin\');location.reload();return false">Выйти (' + login + ')</a></nav>';
     html = html.replace("</nav>", logout);
-    document.open();
-    document.write(html);
-    document.close();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    document.replaceChild(document.adoptNode(doc.documentElement), document.documentElement);
   });
 }
 
-const saved = sessionStorage.getItem("mk");
-if (saved) showPage(unhex(saved), sessionStorage.getItem("mklogin") || "");
+function whenReady(fn) {
+  if (document.readyState !== "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn);
+}
+
+whenReady(() => {
+  const saved = sessionStorage.getItem("mk");
+  if (saved) showPage(unhex(saved), sessionStorage.getItem("mklogin") || "");
+});
 
 document.getElementById("loginForm").addEventListener("submit", async e => {
   e.preventDefault();
